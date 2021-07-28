@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "Order_Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <h1 class="h3 text-gray-800">Chi tiết đơn hàng</h1>
+
+                <div class="panel-body mb-4">
+                    <a href="@Url.Action("Index", "Order")" class="btn btn-primary a-btn-slide-text">
+                        <i class="fas fa-arrow-circle-left"></i> <strong>Trở lại</strong>
+                    </a>
+                </div>
+                <div class="page-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="customerName">Tên khách hàng</label> <input type="text"
+                                                                                        class="form-control" id="customerName"
+                                                                                        placeholder="Ngô Văn Hiệp" readonly="readonly">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="customerPhone">Số điện thoại</label> <input type="text"
+                                                                                        class="form-control" id="customerPhone"
+                                                                                        placeholder="0131314564" readonly="readonly">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail4">Email</label> <input type="email"
+                                                                          class="form-control" id="inputEmail4"
+                                                                          placeholder="anhhiep2000md@gmail.com" readonly="readonly">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Địa Chỉ</label> <input type="text"
+                                                                             class="form-control" id="inputAddress"
+                                                                             placeholder="Trung Hòa - Cầu Giấy" readonly="readonly">
+                        </div>
+
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">List Products</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" width="100%"
+                                           cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>STT</th>
+                                                <th>Tên sản phẩm</th>
+                                                <th>Giá</th>
+                                                <th>Số lượng</th>
+                                                <!-- <th>Action</th> -->
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <c:forEach items="${saleorderProducts}" var="sp"
+                                                       varStatus="loop">
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Cây thủy sinh trắng</td>
+                                                    <td>400000VNĐ</td>
+                                                    <td>2</td>
+                                                    <!-- <td style="width: 25%;"><a href="#"
+                                                            class="btn btn-secondary a-btn-slide-text">
+                                                            <strong>Sửa</strong>
+                                                            <i class="fas fa-edit"></i>
+                                                        </a> <a
+                                                            href="${base}/admin/saleorders/detail/${saleorder.id}"
+                                                            class="btn btn-primary a-btn-slide-text">
+                                                            <strong>View</strong>
+                                                            <i class="fas fa-eye"></i>
+                                                        </a> <a href="#"
+                                                            class="btn btn-danger a-btn-slide-text">
+                                                            <strong>Xóa</strong> <i
+                                                                class="fas fa-trash-alt"></i>
+                                                        </a></td> -->
+                                                </tr>
+                                            </c:forEach>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="total">Tổng tiền phải thanh toán:</label> <label style="color: red;">
+                                <fmt:formatNumber type="number" pattern="###,###VNĐ"
+                                                  value="800000" />
+                            </label>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <div id="styleSelector">
+
+            </div>
+        </div>
+    </div>
+</div>
+

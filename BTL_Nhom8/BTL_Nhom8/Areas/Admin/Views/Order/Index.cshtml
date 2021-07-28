@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <h3>Danh sách đơn đặt hàng</h3>
+                <div class="page-body">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")">Trang chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Danh sách đơn đặt hàng
+                            </li>
+                        </ol>
+                    </nav>
+
+                    <!-- <a class="btn btn-outline-primary mb-1" href="AddProduct.html" role="button">Add
+                        New</a> -->
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">STT</th>
+                                <th scope="col">Tên khách hàng</th>
+                                <th scope="col">Địa chỉ</th>
+                                <th scope="col">Số điện thoại</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Tổng tiền</th>
+                                <th scope="col">Hành động</th>
+                                <th scope="col">Trạng thái</th>
+                                <th scope="col">Thanh toán</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Ngô Văn Hiệp</td>
+                                <td>Trung Hòa-Cầu Giấy</td>
+                                <td>023516841</td>
+                                <td>anhhiep2000md@gmail.com</td>
+                                <td>800000</td>
+                                <td>
+                                    <a class="btn btn-primary" href="@Url.Action("Order_Detail", "Order")" role="button"
+                                       style="line-height: 10px;">View</a>
+                                    <button class="btn btn-danger" role="button"
+                                            style="line-height: 10px;">
+                                        Delete
+                                    </button>
+                                </td>
+                                <td>Đang chờ phê duyệt</td>
+                                <td data-label="Pay" class="right__confirm">
+                                    <a href="" class="right__iconTable"><img src="assets/icon/icon-check.svg" alt="" style="width: 25px;"></a>
+                                    <a href="" class="right__iconTable"><img src="assets/icon/icon-x.svg" alt="" style="width: 25px;"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Nguyễn Văn Đạt</td>
+                                <td>Tây Mỗ - Nam Từ Liêm</td>
+                                <td>0984523674</td>
+                                <td>datnv2000md@gmail.com</td>
+                                <td>2000000</td>
+                                <td>
+                                    <a class="btn btn-primary" href="@Url.Action("Order_Detail", "Order")" role="button"
+                                       style="line-height: 10px;">View</a>
+                                    <button class="btn btn-danger" role="button"
+                                            style="line-height: 10px;">
+                                        Delete
+                                    </button>
+                                </td>
+                                <td>Đang chờ phê duyệt</td>
+                                <td data-label="Pay" class="right__confirm">
+                                    <a href="" class="right__iconTable"><img src="assets/icon/icon-check.svg" alt="" style="width: 25px;"></a>
+                                    <a href="" class="right__iconTable"><img src="assets/icon/icon-x.svg" alt="" style="width: 25px;"></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="styleSelector">
+
+            </div>
+        </div>
+    </div>
+</div>
+

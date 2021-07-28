@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Add_Account";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <h3 class="right__title">Thêm tài khoản</h3>
+                <br>
+                <div class="page-body">
+                    <div class="form-group">
+                        <label for="title">Tên người dùng (required)</label>
+                        <input autocomplete="off" type="text" class="form-control" id="title"
+                               placeholder="Tiều đề" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Quyền (required)</label>
+                        <select path="categories.id" class="form-control" id="category">
+                            <option value="Cây Thủy sinh">Administrator</option>
+                            <option value="Cây Phong Hàn">Manager</option>
+                            <select>
+                    </div>
+                    <a href="@Url.Action("Index", "Account")" class="btn btn-secondary active" role="button"
+                       aria-pressed="true">Trở lại </a>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+
+                <div id="styleSelector">
+
+                </div>
+            </div>
+
+            <div id="styleSelector">
+
+            </div>
+        </div>
+    </div>
+</div>
+

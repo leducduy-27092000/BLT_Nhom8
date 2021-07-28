@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Add_Category";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <h3 class="right__title">Thêm danh mục</h3>
+                <br>
+                <div class="page-body">
+                    <div class="form-group">
+                        <label for="title">Tên danh mục (required)</label>
+                        <input autocomplete="off" type="text" class="form-control" id="title"
+                               placeholder="Tiêu đề" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <label for="detail_description">Mô tả (required)</label>
+                        <textarea autocomplete="off" path="details" class="form-control summernote"
+                                  id="detail_description" rows="3" required="required"></textarea>
+                    </div>
+                    <a href="@Url.Action("Index", "Category")" class="btn btn-secondary active" role="button"
+                       aria-pressed="true">Trở lại</a>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+
+                <div id="styleSelector">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

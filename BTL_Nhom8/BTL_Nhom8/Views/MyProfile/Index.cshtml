@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "My_Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- ##### Breadcrumb Area Start ##### -->
+<div class="breadcrumb-area">
+    <!-- Top Breadcrumb Area -->
+    <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(/wwwroot/img/bg-img/24.jpg);">
+        <h2>Thông tin cá nhân</h2>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i> Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Cá nhân</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ##### Breadcrumb Area End ##### -->
+<!-- ##### Contact Area Info Start ##### -->
+<div class="contact-area-info section-padding-0-100">
+    <div class="container">
+        <h3 style="font-weight: bolder;">Thông tin cá nhân</h3>
+        <br>
+        <div class="contact-area-info section-padding-0-100">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <!-- Contact Thumbnail -->
+                    <div class="col-12 col-md-6">
+                        <div class="contact--thumbnail">
+                            <img src="~/wwwroot/img/bg-img/25.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-5">
+                        <!-- Section Heading -->
+                        <div class="section-heading">
+                            <h2>Tài khoản của bạn</h2>
+                            <!-- <p>We are improving our services to serve you better.</p> -->
+                        </div>
+                        <!-- Contact Information -->
+                        <div class="contact-information">
+                            <p><span>Họ và tên:</span> Ngô Văn Hiệp</p>
+                            <p><span>Địa chỉ:</span> Hiệp Hòa - Bắc Giang</p>
+                            <p><span>Số điện thoại:</span> 0949853996</p>
+                            <p><span>Email:</span> anhhiep2000md@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-between">
+            <!-- Contact Thumbnail -->
+            <div class="row">
+                <div style="font-size: 25px; font-weight: bolder; margin-bottom: 10px; margin-left: 10px;">Sửa thông tin tài khoản</div>
+
+                <div class="col-12">
+                    <div style="font-weight: bolder;">Họ và tên *:</div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" placeholder="Nhập họ tên">
+                    </div>
+                </div>
+                <div></div>
+                <br>
+                <div class="col-12">
+                    <div style="font-weight: bolder;">Địa chỉ Email *:</div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Nhập email">
+                    </div>
+                </div>
+                <div></div>
+                <div class="col-12">
+                    <div style="font-weight: bolder;">Địa chỉ *:</div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="address" placeholder="Nhập địa chỉ">
+                    </div>
+                </div>
+                <div></div>
+                <div class="col-12">
+                    <div style="font-weight: bolder;">Số điện thoại *:</div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="telephone" placeholder="Nhập số điện thoại">
+                    </div>
+                </div>
+                <div></div>
+                <div class="col-12">
+                    <button type="submit" class="btn alazea-btn mt-15">Cập nhật</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ##### Contact Area Info End ##### -->
