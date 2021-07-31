@@ -25,14 +25,34 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Login -->
-                            <div class="login">
-                                <a href="@Url.Action("Login", "Home")"><i class="fa fa-user" aria-hidden="true"></i> <span>Đăng nhập</span></a>
-                            </div>
-                            <!-- Cart -->
-                            <div class="cart">
-                                <a href="@Url.Action("Index", "Cart")"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Giỏ hàng<span class="cart-quantity">(1)</span></span></a>
-                            </div>
+                            @if (Session["HoTen"] != null)
+                            {
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a>Xin chào, @Session["HoTen"] -  @Session["Email"]</a></li>
+                                    <li>
+                                        @*@Html.ActionLink("Logout", "/Logout", "Home", htmlAttributes: new
+                    { @style = "font-size:small; color:yellow" })*@
+                                        <a href="/Home/Logout" style="font-size: small; color: yellow">Logout</a>
+                                    </li>
+                                </ul>
+                                var count = (@Session["CartLineTotal"] == null) ? 0 : @Session["CartLineTotal"];
+                                    <div class="cart">
+                                        <a href="@Url.Action("Index", "Cart")"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Giỏ hàng<span class="cart-quantity"></span>(@count)</span></a>
+                                    </div>
+                                
+                            }
+                            else
+                            {
+                                <!-- Login -->
+                                <div class="login">
+                                    <a href="@Url.Action("Login", "Home")"><i class="fa fa-user" aria-hidden="true"></i> <span>Đăng nhập</span></a>
+                                </div>
+                                <div class="cart">
+                                    <a href="@Url.Action("Index", "Cart")"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Giỏ hàng</span></a>
+                                </div>
+                            }
+
+
                         </div>
                     </div>
                 </div>

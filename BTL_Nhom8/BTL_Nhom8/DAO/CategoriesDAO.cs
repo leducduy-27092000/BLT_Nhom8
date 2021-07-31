@@ -9,7 +9,7 @@ namespace BTL_Nhom8.DAO
 
     public class CategoriesDAO
     {
-        private Model1 db = new Model1();
+        private Model2 db = new Model2();
         public List<Category> GetAllCategoiries()
         {
             var listCate = db.Categories.ToList();
@@ -18,7 +18,6 @@ namespace BTL_Nhom8.DAO
 
         public List<Product> GetProductsByCategoryId(int id)
         {
-            
             return db.Products.Where(p => p.Category_Id.Equals(id)).ToList();
 
         }

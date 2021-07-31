@@ -11,6 +11,7 @@ namespace BTL_Nhom8.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
+            DetailProduct_Order = new HashSet<DetailProduct_Order>();
             Product_Image = new HashSet<Product_Image>();
         }
 
@@ -31,7 +32,7 @@ namespace BTL_Nhom8.Models
 
         public int Quantity { get; set; }
 
-        [Column(TypeName = "text")]
+        [Column(TypeName = "ntext")]
         [Required]
         public string Detail_Description { get; set; }
 
@@ -40,6 +41,9 @@ namespace BTL_Nhom8.Models
         public string Avatar { get; set; }
 
         public virtual Category Category { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DetailProduct_Order> DetailProduct_Order { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product_Image> Product_Image { get; set; }

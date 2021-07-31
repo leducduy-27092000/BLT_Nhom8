@@ -1,4 +1,5 @@
-﻿
+﻿@model BTL_Nhom8.Dto.Cart
+
 @{
     ViewBag.Title = "Checkout";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -31,33 +32,35 @@
             <div class="col-12 col-lg-7">
                 <div class="checkout_details_area clearfix">
                     <h5>Chi tiết thanh toán</h5>
-                    <form action="#" method="post">
+                    <form action="#" method="post" o>
                         <div class="row">
                             <div class="col-12 mb-4">
-                                <label for="customers">Tên khách hàng *</label>
-                                <input type="text" class="form-control" id="customers" value="">
-                            </div>
-                            <div class="col-12 mb-4">
                                 <label for="email_address">Địa chỉ email *</label>
-                                <input type="email" class="form-control" id="email_address" value="">
+                                <input type="email" class="form-control" id="email_address" value="@Model.customerDto.Email" disabled>
                             </div>
+
+                            <div class="col-12 mb-4">
+                                <label for="customers">Tên khách hàng *</label>
+                                <input type="text" class="form-control" id="customers" value="@Model.customerDto.Customer_Name" disabled>
+                            </div>
+
                             <div class="col-12 mb-4">
                                 <label for="phone_number">Số điện thoại *</label>
-                                <input type="number" class="form-control" id="phone_number" min="0" value="">
+                                <input type="number" class="form-control" id="phone_number" min="0" value="@Model.customerDto.Telephone">
                             </div>
-                            
+
                             <div class="col-12 mb-4">
                                 <label for="company">Địa chỉ *</label>
-                                <input type="text" class="form-control" id="address" value="">
+                                <input type="text" class="form-control" id="address" value="@Model.customerDto.Address">
                             </div>
-                            
-                            
-                           
+
+
+
                             <div class="col-md-12 mb-4">
                                 <label for="order-notes">Ghi chú đơn hàng</label>
                                 <textarea class="form-control" id="order-notes" cols="30" rows="10" placeholder="ghi chú về đơn đặt hàng, ví dụ như ghi chú đặc biệt để giao hàng."></textarea>
                             </div>
-                            
+
                         </div>
                     </form>
                 </div>
@@ -69,20 +72,30 @@
                     <div class="products">
                         <div class="products-data">
                             <h5>Các sản phẩm:</h5>
-                            <div class="single-products d-flex justify-content-between align-items-center">
-                                <p>Cây tái tạo</p>
-                                <h5>$9.99</h5>
-                            </div>
+                            @foreach (var item in Model.cartLines)
+                            {
+                                <div class="single-products d-flex justify-content-between align-items-center">
+
+                                    <p>@item.productDto.Name</p>
+                                    <h5>@item.productDto.Price</h5>
+
+
+                                </div>
+                            }
                         </div>
                     </div>
                     <div class="subtotal d-flex justify-content-between align-items-center">
-                        <h5>Số lượng</h5>
-                        <h5>6</h5>
+                        <h5>Tổng loại hàng:</h5>
+                        <h5>@(Model.cartLines.Count())</h5>
                     </div>
-                    
+                    <div class="subtotal d-flex justify-content-between align-items-center">
+                        <h5>Tổng số lượng sản phẩm mua</h5>
+                        <h5>@(Model.cartLines.Sum(x=>x.quantity))</h5>
+                    </div>
+
                     <div class="order-total d-flex justify-content-between align-items-center">
                         <h5>Tổng hóa đơn</h5>
-                        <h5>$12.99</h5>
+                        <h5>@(Model.cartLines.Sum(item=>item.getAmount()))</h5>
                     </div>
                     <div class="checkout-btn mt-30">
                         <a href="#" class="btn alazea-btn w-100">Đặt hàng</a>

@@ -1,4 +1,5 @@
 ﻿using BTL_Nhom8.DAO;
+using BTL_Nhom8.Dto;
 using BTL_Nhom8.Models;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace BTL_Nhom8.Controllers
     public class ShopController : Controller
     {
         // GET: Shop
-        private Model1 db = new Model1();
+        private Model2 db = new Model2();
         CategoriesDAO categoriesDAO = new CategoriesDAO();
         [HttpGet]
         public ActionResult Index()
@@ -41,9 +42,20 @@ namespace BTL_Nhom8.Controllers
             ViewBag.TotalProducts = db.Products.ToList().Count();
         }
 
-        public ActionResult Shop_Detail()
+        [HttpGet]
+        public ActionResult Shop_Detail(int? id)
         {
-            return View();
+            if(id == null)
+            {
+                return RedirectToAction("Index");
+            }
+            Product product = db.Products.Find(id);
+            var splq = db.Products.Where(p => p.Category_Id.Equals(product.Category_Id)
+            && p.Product_Id != id).Take(4).ToList();
+            ViewBag.sqlq =(List<Product>) splq;
+            return View(product);
         }
+
+        
     }
 }
