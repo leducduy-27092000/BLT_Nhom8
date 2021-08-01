@@ -12,6 +12,7 @@ namespace BTL_Nhom8.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Order()
         {
+            
             DetailProduct_Order = new HashSet<DetailProduct_Order>();
         }
 
@@ -20,11 +21,19 @@ namespace BTL_Nhom8.Models
 
         public int Account_Id { get; set; }
 
-        public long Total { get; set; }
-
-        public long Sum { get; set; }
+        public long Total_Amount { get; set; }
 
         public bool Status { get; set; }
+
+        [Required]
+        [StringLength(255)]
+        public string Customer_Address { get; set; }
+
+        [Required]
+        [StringLength(10)]
+        public string Customer_Phone { get; set; }
+
+        public DateTime? Order_Date { get; set; }
 
         public virtual Account Account { get; set; }
 

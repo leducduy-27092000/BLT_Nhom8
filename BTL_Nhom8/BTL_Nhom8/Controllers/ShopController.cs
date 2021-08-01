@@ -13,7 +13,7 @@ namespace BTL_Nhom8.Controllers
     public class ShopController : Controller
     {
         // GET: Shop
-        private Model2 db = new Model2();
+        private WebCayCanh db = new WebCayCanh();
         CategoriesDAO categoriesDAO = new CategoriesDAO();
         [HttpGet]
         public ActionResult Index()
@@ -50,6 +50,8 @@ namespace BTL_Nhom8.Controllers
                 return RedirectToAction("Index");
             }
             Product product = db.Products.Find(id);
+            product.Product_Image = db.Product_Image.Where(pi => pi.Product_Id == id).ToList();
+            
             var splq = db.Products.Where(p => p.Category_Id.Equals(product.Category_Id)
             && p.Product_Id != id).Take(4).ToList();
             ViewBag.sqlq =(List<Product>) splq;

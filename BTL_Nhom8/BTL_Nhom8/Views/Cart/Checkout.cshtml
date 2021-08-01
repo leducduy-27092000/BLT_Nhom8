@@ -32,33 +32,26 @@
             <div class="col-12 col-lg-7">
                 <div class="checkout_details_area clearfix">
                     <h5>Chi tiết thanh toán</h5>
-                    <form action="#" method="post" o>
+                    <form name="formCheckOut" action="/Cart/Final_Checkout" method="post">
                         <div class="row">
                             <div class="col-12 mb-4">
                                 <label for="email_address">Địa chỉ email *</label>
-                                <input type="email" class="form-control" id="email_address" value="@Model.customerDto.Email" disabled>
+                                <input type="email" class="form-control" name="Email" id="email_address" value="@Model.customerDto.Email" disabled>
                             </div>
 
                             <div class="col-12 mb-4">
                                 <label for="customers">Tên khách hàng *</label>
-                                <input type="text" class="form-control" id="customers" value="@Model.customerDto.Customer_Name" disabled>
+                                <input type="text" class="form-control" name="Customer_Name" id="customers" value="@Model.customerDto.Customer_Name" disabled>
                             </div>
 
                             <div class="col-12 mb-4">
-                                <label for="phone_number">Số điện thoại *</label>
-                                <input type="number" class="form-control" id="phone_number" min="0" value="@Model.customerDto.Telephone">
+                                <label for="customers">Số điện thoại *</label>
+                                <input type="text" class="form-control" name="Telephone" id="customers" value="@Model.customerDto.Telephone" >
                             </div>
 
                             <div class="col-12 mb-4">
                                 <label for="company">Địa chỉ *</label>
-                                <input type="text" class="form-control" id="address" value="@Model.customerDto.Address">
-                            </div>
-
-
-
-                            <div class="col-md-12 mb-4">
-                                <label for="order-notes">Ghi chú đơn hàng</label>
-                                <textarea class="form-control" id="order-notes" cols="30" rows="10" placeholder="ghi chú về đơn đặt hàng, ví dụ như ghi chú đặc biệt để giao hàng."></textarea>
+                                <input type="text" class="form-control" name="Address" id="address" value="@Model.customerDto.Address">
                             </div>
 
                         </div>
@@ -98,7 +91,8 @@
                         <h5>@(Model.cartLines.Sum(item=>item.getAmount()))</h5>
                     </div>
                     <div class="checkout-btn mt-30">
-                        <a href="#" class="btn alazea-btn w-100">Đặt hàng</a>
+                        <button onclick="document.forms['formCheckOut'].submit()"  class="btn alazea-btn w-100">Đặt hàng</button>
+                       
                     </div>
                 </div>
             </div>

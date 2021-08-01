@@ -33,14 +33,6 @@ namespace BTL_Nhom8.Models
         public string Customer_Name { get; set; }
 
         [Required]
-        [StringLength(200)]
-        public string Address { get; set; }
-
-        [Required]
-        [StringLength(20)]
-        public string Telephone { get; set; }
-
-        [Required]
         [StringLength(100)]
         public string Email { get; set; }
 

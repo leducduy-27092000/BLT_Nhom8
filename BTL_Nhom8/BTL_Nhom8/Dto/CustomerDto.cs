@@ -18,8 +18,6 @@ namespace BTL_Nhom8.Dto
         public CustomerDto(Account acc)
         {
             this.Customer_Name = acc.Customer_Name;
-            this.Address = acc.Address;
-            this.Telephone = acc.Telephone;
             this.Email = acc.Email;
         }
     }

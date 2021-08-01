@@ -9,7 +9,7 @@ namespace BTL_Nhom8.DAO
 
     public class CategoriesDAO
     {
-        private Model2 db = new Model2();
+        private WebCayCanh db = new WebCayCanh();
         public List<Category> GetAllCategoiries()
         {
             var listCate = db.Categories.ToList();

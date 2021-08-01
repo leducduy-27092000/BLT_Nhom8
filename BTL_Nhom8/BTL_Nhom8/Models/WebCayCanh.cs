@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace BTL_Nhom8.Models
 {
-    public partial class Model2 : DbContext
+    public partial class WebCayCanh : DbContext
     {
-        public Model2()
-            : base("name=WebCayCanh")
+        public WebCayCanh()
+            : base("name=Web_Cay_Canh")
         {
         }
 
@@ -36,6 +36,10 @@ namespace BTL_Nhom8.Models
                 .HasMany(e => e.Products)
                 .WithRequired(e => e.Category)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Order>()
+                .Property(e => e.Customer_Phone)
+                .IsFixedLength();
 
             modelBuilder.Entity<Order>()
                 .HasMany(e => e.DetailProduct_Order)

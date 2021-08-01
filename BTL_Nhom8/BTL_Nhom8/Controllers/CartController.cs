@@ -14,7 +14,7 @@ namespace BTL_Nhom8.Controllers
     {
 
         // GET: Cart
-        private Model2 db = new Model2();
+        private WebCayCanh db = new WebCayCanh();
         private const string CartSession = "CartSession";
 
         public ActionResult Index()
@@ -113,6 +113,7 @@ namespace BTL_Nhom8.Controllers
             }, JsonRequestBehavior.AllowGet); 
         }
 
+        [HttpGet]
         public ActionResult Checkout()
         {
             var cart = (Cart)Session[CartSession];
@@ -123,6 +124,23 @@ namespace BTL_Nhom8.Controllers
             int id_user =(int) Session["idUser"];
             Account acc = (Account)db.Accounts.Where(a => a.Account_Id.Equals(id_user)).First() ;
             cart.customerDto = new CustomerDto(acc);
+            return View(cart);
+        }
+
+        [HttpPost]
+        public ActionResult Final_Checkout(CustomerDto customerDto)
+        {
+            var cart = (Cart)Session[CartSession];
+            Order order = new Order();
+            order.Account_Id = (int)Session["idUser"];
+            order.Customer_Address= customerDto.Address;
+            order.Customer_Phone = customerDto.Telephone;
+            order.Status = true;
+            order.Order_Date = DateTime.Now;
+            order.Total_Amount = ((long)cart.cartLines.Sum(x => x.getAmount()));
+            db.Orders.Add(order);
+            db.SaveChanges();
+            Session.Remove(CartSession);
             return View(cart);
         }
     }

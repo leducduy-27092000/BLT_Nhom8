@@ -151,7 +151,6 @@ C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom
 C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom8\bin\Newtonsoft.Json.xml
 C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom8\bin\Antlr3.Runtime.pdb
 C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom8\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom8\obj\Debug\BTL_Nhom8.csproj.AssemblyReference.cache
 C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom8\obj\Debug\BTL_Nhom8.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom8\obj\Debug\BTL_Nhom8.csproj.CopyComplete
 C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom8\obj\Debug\BTL_Nhom8.dll
@@ -160,3 +159,4 @@ C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom
 C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom8\bin\EntityFramework.SqlServer.dll
 C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom8\bin\EntityFramework.xml
 C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom8\bin\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom8\obj\Debug\BTL_Nhom8.csproj.AssemblyReference.cache

@@ -37,31 +37,51 @@
                     <div class="single_product_thumb">
                         <div id="product_details_slider" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <a class="product-img" href="~/wwwroot/img/Images/@Model.Avatar" title="Product Image">
-                                        <img class="d-block w-100" src="~/wwwroot/img/Images/@Model.Avatar" alt="1">
-                                    </a>
-                                </div>
-                                <div class="carousel-item ">
-                                    <a class="product-img" href="~/wwwroot/img/Images/@Model.Avatar" title="Product Image">
-                                        <img class="d-block w-100" src="~/wwwroot/img/Images/@Model.Avatar" alt="1">
-                                    </a>
-                                </div>
-                                <div class="carousel-item ">
-                                    <a class="product-img" href="~/wwwroot/img/Images/@Model.Avatar" title="Product Image">
-                                        <img class="d-block w-100" src="~/wwwroot/img/Images/@Model.Avatar" alt="1">
-                                    </a>
-                                </div>
+                                @{int i = 0;}
+                                @foreach (var item in Model.Product_Image)
+                                {
+                                    if (i == 0)
+                                    {
+                                        <div class="carousel-item active">
+                                            <a class="product-img" href="~/wwwroot/img/Child_Product_Images/@item.Name" title="Product Image">
+                                                <img class="d-block w-100" src="~/wwwroot/img/Child_Product_Images/@item.Name" alt="1">
+                                            </a>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="carousel-item">
+                                            <a class="product-img" href="~/wwwroot/img/Child_Product_Images/@item.Name" title="Product Image">
+                                                <img class="d-block w-100" src="~/wwwroot/img/Child_Product_Images/@item.Name" alt="1">
+                                            </a>
+                                        </div>
+                                    }
+                                    i++;
 
-                               
+                                }
+
                             </div>
                             <ol class="carousel-indicators">
-                                <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url(/wwwroot/img/Images/@Model.Avatar);">
-                                </li>
-                                <li data-target="#product_details_slider" data-slide-to="1" style="background-image: url(/wwwroot/img/Images/@Model.Avatar);">
-                                </li>
-                                <li data-target="#product_details_slider" data-slide-to="2" style="background-image: url(/wwwroot/img/Images/@Model.Avatar);">
-                                </li>
+
+                                @{i = 0;}
+
+                                @foreach (var item in Model.Product_Image)
+                                {
+
+                                    if (i == 0)
+                                    {
+                                        <li class="active" data-target="#product_details_slider" data-slide-to="@i" style="background-image: url(/wwwroot/img/Child_Product_Images/@item.Name);">
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li data-target="#product_details_slider" data-slide-to="@i" style="background-image: url(/wwwroot/img/Child_Product_Images/@item.Name);">
+                                        </li>
+                                    }
+
+                                    i = i + 1;
+
+                                }
                             </ol>
                         </div>
                     </div>

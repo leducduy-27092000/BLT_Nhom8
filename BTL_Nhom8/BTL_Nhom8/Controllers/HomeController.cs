@@ -10,7 +10,7 @@ namespace BTL_Nhom8.Controllers
 {
     public class HomeController : Controller
     {
-        private Model2 db = new Model2();
+        private WebCayCanh db = new WebCayCanh();
         public ActionResult Index()
         { 
             
