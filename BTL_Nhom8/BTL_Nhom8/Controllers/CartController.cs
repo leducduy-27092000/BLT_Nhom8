@@ -100,16 +100,18 @@ namespace BTL_Nhom8.Controllers
         public ActionResult DeleteItem(int id)
         {
             var cart = (Cart)Session[CartSession];
-
+            var gtri = 0;
             var item = cart.cartLines.Find(p => p.productDto.Id.Equals(id));
             if(item != null)
             {
                 cart.cartLines.Remove(item);
+                gtri = (int)cart.cartLines.Count;
             }
             Session[CartSession] = cart;
             return Json(new
             {
-                status = true
+                status = true,
+                cartline = gtri
             }, JsonRequestBehavior.AllowGet); 
         }
 

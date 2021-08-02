@@ -160,3 +160,7 @@ C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom
 C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom8\bin\EntityFramework.xml
 C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom8\bin\EntityFramework.SqlServer.xml
 C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom8\obj\Debug\BTL_Nhom8.csproj.AssemblyReference.cache
+C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom8\bin\PagedList.dll
+C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom8\bin\PagedList.Mvc.dll
+C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom8\bin\PagedList.xml
+C:\Users\Administrator\Documents\Zalo Received Files\BTL_QLBH\BTL_Nhom8\BTL_Nhom8\bin\PagedList.Mvc.xml

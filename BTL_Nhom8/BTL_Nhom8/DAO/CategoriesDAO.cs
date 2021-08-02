@@ -16,9 +16,9 @@ namespace BTL_Nhom8.DAO
             return listCate;
         }
 
-        public List<Product> GetProductsByCategoryId(int id)
+        public List<Product> GetProductsByCategoryId(int? id)
         {
-            return db.Products.Where(p => p.Category_Id.Equals(id)).ToList();
+            return db.Products.Where(p => p.Category_Id == id).ToList();
 
         }
 

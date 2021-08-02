@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿
+$(document).ready(function () {
     $(".qty-minus").click(function () {
 
         var id = $(this).attr("data-id");
@@ -32,6 +33,7 @@
             }
         });
     }
+    
 
     $(".action").click(function () {
         var id = $(this).attr("data-id");
@@ -42,6 +44,8 @@
             success: function (ketqua) {
                 if (ketqua.status == true) {
                     $('#row_' + id).remove();
+                    alert(ketqua.cartline);
+                    $('#giohang').text("("+ketqua.cartline+")");
                 }
             }
         });

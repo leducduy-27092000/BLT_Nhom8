@@ -21,7 +21,7 @@
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item" href="@Url.Action("Index", "MyProfile")">Xem trang cá nhân</a>
                                         <a class="dropdown-item" href="#">Cài đặt</a>
-                                        <a class="dropdown-item" href="@Url.Action("Login","Home")">Đăng xuất</a>
+                                        <a class="dropdown-item" href="@Url.Action("Logout","Home")">Đăng xuất</a>
                                     </div>
                                 </div>
                             </div>
@@ -29,15 +29,11 @@
                             {
                                 <ul class="nav navbar-nav navbar-right">
                                     <li><a>Xin chào, @Session["HoTen"] -  @Session["Email"]</a></li>
-                                    <li>
-                                        @*@Html.ActionLink("Logout", "/Logout", "Home", htmlAttributes: new
-                    { @style = "font-size:small; color:yellow" })*@
-                                        <a href="/Home/Logout" style="font-size: small; color: yellow">Logout</a>
-                                    </li>
+                                    
                                 </ul>
                                 var count = (@Session["CartLineTotal"] == null) ? 0 : @Session["CartLineTotal"];
                                     <div class="cart">
-                                        <a href="@Url.Action("Index", "Cart")"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Giỏ hàng<span class="cart-quantity"></span>(@count)</span></a>
+                                        <a href="@Url.Action("Index", "Cart")"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span >Giỏ hàng<span class="cart-quantity"></span ><span id="giohang">(@count)</span></span></a>
                                     </div>
                                 
                             }
